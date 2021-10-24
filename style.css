@@ -28,7 +28,9 @@ body {
 body.show-nav {
     transform: translateX(200px);
 }
-
+button {
+    cursor: pointer;
+}
 /* .show-nav2{
     width: 100vh-200px;
 } */
@@ -159,4 +161,117 @@ h1 {
 
 .more-text {
     margin-bottom: 15px;
+}
+.back{
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 1000;
+}
+/* =========================================FOrm=======================================*/
+.reg {
+    display: none;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 6px 5px 20px 9px #00000061;
+    height: 750px;
+    width: 650px;
+    border-radius: 8px;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 0.5s;
+    z-index: 1001;
+}
+ /* Chrome, Safari, Opera */
+ @-webkit-keyframes example {
+    0% {opacity: 0;}
+    25% {opacity: 0.3;}
+    50% {opacity:0.5;}
+    75% {opacity:0.7;}
+    100% {opacity:1;}
+   }
+    
+   /* Standard syntax */
+   @keyframes example {
+    0% {opacity: 0;}
+    25% {opacity: 0.3;}
+    50% {opacity:0.5;}
+    75% {opacity:0.7;}
+    100% {opacity:1;}
+   }
+.reg.sec-reg-st {
+    display: block;
+
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: white;
+}
+
+.reg-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 500px;
+}
+
+.cross {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.reg-section-form {
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+
+.form-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(39, 39, 39);
+}
+
+.reg-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-item-name {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.reg-input-area {
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 20px 0 20px 7px;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 7px;
+    color: rgb(151, 151, 151);
+}
+
+.submit-reg {
+    border-radius: 7px;
+    width: 120px;
+    height: 45px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
 }
