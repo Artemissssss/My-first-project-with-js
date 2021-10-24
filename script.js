@@ -21,3 +21,7 @@ function onClickSlide() {
         i--;
     }
 }
+function formReg() {
+document.querySelector("#reg").classList.toggle("sec-reg-st");
+document.querySelector('body').classList.toggle("back");
+}
