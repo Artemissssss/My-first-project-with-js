@@ -188,7 +188,7 @@ h1 {
     animation-duration: 0.5s;
     z-index: 1001;
 }
- /* Chrome, Safari, Opera */
+
  @-webkit-keyframes example {
     0% {opacity: 0;}
     25% {opacity: 0.3;}
@@ -197,7 +197,7 @@ h1 {
     100% {opacity:1;}
    }
     
-   /* Standard syntax */
+
    @keyframes example {
     0% {opacity: 0;}
     25% {opacity: 0.3;}
