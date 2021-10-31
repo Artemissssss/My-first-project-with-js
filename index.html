@@ -5,274 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .calculator {
-            width: 400px;
-            height: 900px;
-            border: 2px solid rgb(255, 82, 82);
-            margin: 50px auto;
-            border-radius: 7px;
-        }
-
-        #screen {
-            border-bottom: 2px solid rgb(255, 82, 82);
-            height: 100px;
-            color: rgb(180, 39, 39);
-            font-size: 50px;
-
-        }
-
-        .numbers {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .btn-number {
-            height: 100px;
-            width: 100px;
-            border: 2px solid rgb(255, 82, 82);
-            border-top: none;
-            background-color: white;
-            font-size: 40px;
-        }
-
-        .btn-number:hover {
-            background-color: rgb(209, 143, 143);
-            color: white;
-        }
-
-        .btn-number:nth-of-type(1) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-
-        .btn-number:nth-of-type(2) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-
-        .btn-number:nth-of-type(3) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-
-        .operations {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-
-        .btn-operations {
-            height: 100px;
-            width: 100px;
-            border: 2px solid rgb(255, 82, 82);
-            border-top: none;
-            background-color: white;
-            font-size: 40px;
-
-        }
-
-        .btn-operations:hover {
-            background-color: rgb(209, 143, 143);
-            color: white;
-        }
-
-        .btn-operations:nth-of-type(1) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-
-        .btn-operations:nth-of-type(2) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-
-        .btn-operations:nth-of-type(3) {
-            border: 2px solid rgb(255, 82, 82);
-        }
-    </style>
-    <div class="calculator">
-        <div id="screen"></div>
-        <div class="numbers">
-            <button class="btn-number" id="zero">0</button>
-            <button class="btn-number" id="one">1</button>
-            <button class="btn-number" id="two">2</button>
-            <button class="btn-number" id="three">3</button>
-            <button class="btn-number" id="four">4</button>
-            <button class="btn-number" id="five">5</button>
-            <button class="btn-number" id="six">6</button>
-            <button class="btn-number" id="seven">7</button>
-            <button class="btn-number" id="eight">8</button>
-            <button class="btn-number" id="nine">9</button>
+    <nav id='nav1'>
+        <div class="logo">
+            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="goba">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contacts</a>
+                </li>
+            </ul>
         </div>
-        <div class="operations">
-            <button class="btn-operations" id="plus">+</button>
-            <button class="btn-operations" id="minus">-</button>
-            <button class="btn-operations" id="multiplication">*</button>
-            <button class="btn-operations" id="division">&#247;</button>
-            <button class="btn-operations" id="fraction">.</button>
-            <button class="btn-operations" id="factorial">!</button>
-            <button class="btn-operations" id="equals">=</button>
-            <button class="btn-operations" id="reverse">&#8592;</button>
-            <button class="btn-operations" id="power">x²</button>
+    </nav>
+
+    <header>
+        <button id="toggle" class="toggle" onclick="onClickSlide()">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>My page</h1>
+        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, amet!</p>
+        <button class="cta-btn" id="reg1" >Sign Up</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="what-about">
+                <h2 class="about-main-text">What is this landing page about?</h2>
+                <p class="about-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt itaque cumque, non,
+                    asperiores, repellendus velit delectus beatae suscipit nemo enim eaque consectetur laborum quod
+                    voluptatem animi quo dicta in quis?</p>
+                <p class="second-about-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore alias
+                    asperiores tenetur, non eaque voluptates tempore pariatur.
+                </p>
+            </section>
+            <section class="tell">
+                <h2 class="tell-main-text">What is this landing page about?</h2>
+                <p class="more-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt itaque cumque, non,
+                    asperiores, repellendus velit delectus beatae suscipit nemo enim eaque consectetur laborum quod
+                    voluptatem animi quo dicta in quis?</p>
+                <p class="second-more-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore alias
+                    asperiores tenetur, non eaque voluptates tempore pariatur.
+                </p>
+            </section>
         </div>
-    </div>
-    <script>
-        let b = 0;
-        let firstValue;
+    </main>
 
-        function plusFunction() {
-            firstValue = document.getElementById("screen").textContent;
-            document.getElementById("screen").textContent = "";
-            b = -1;
-        }
-        document.getElementById("minus").addEventListener("click", minusFunction);
+    <footer>
 
-        function minusFunction() {
-            firstValue = document.getElementById("screen").textContent;
-            document.getElementById("screen").textContent = "";
-            b = 1;
-        }
-        document.getElementById("multiplication").addEventListener("click", multiplicationFunction);
-
-        function multiplicationFunction() {
-            firstValue = document.getElementById("screen").textContent;
-            document.getElementById("screen").textContent = "";
-            b = 2;
-        }
-        document.getElementById("division").addEventListener("click", divisionFunction);
-
-        function divisionFunction() {
-            firstValue = document.getElementById("screen").textContent;
-            document.getElementById("screen").textContent = "";
-            b = -2;
-        }
-        document.getElementById("reverse").addEventListener("click", reverseFunction);
-
-        function reverseFunction() {
-            window.location.reload();
-        }
-        document.getElementById("zero").addEventListener("click", zeroFunction);
-        document.getElementById("fraction").addEventListener("click", fractionFunction);
-
-        function fractionFunction() {
-            let v = document.getElementById("screen").textContent;
-            v = v.split('');
-            v.reverse()
-            if (v[0] !== '.') {
-                document.getElementById("screen").textContent += '.';
-            }
-        }
-        document.getElementById("factorial").addEventListener("click", factorialFunction);
-
-        function factorialFunction() {
-            let q = parseInt(document.getElementById("screen").textContent),
-                col = 1;
-            for (let i = 1; i <= q; i++) {
-                col *= i;
-            }
-            document.getElementById("screen").textContent = `${col}`;
-        }
-        document.getElementById("power").addEventListener("click", powerFunction);
-
-        function powerFunction() {
-            document.getElementById("screen").textContent = parseFloat(document.getElementById("screen").textContent) *
-                parseFloat(document.getElementById("screen").textContent);
-        }
-
-        function zeroFunction() {
-            document.getElementById("screen").textContent += "0";
-        }
-        document.getElementById("one").addEventListener("click", oneFunction);
-
-        function oneFunction() {
-            document.getElementById("screen").textContent += "1";
-        }
-        document.getElementById("two").addEventListener("click", twoFunction);
-
-        function twoFunction() {
-            document.getElementById("screen").textContent += "2";
-        }
-        document.getElementById("three").addEventListener("click", threeFunction);
-
-        function threeFunction() {
-            document.getElementById("screen").textContent += "3";
-        }
-        document.getElementById("plus").addEventListener("click", plusFunction);
-
-        document.getElementById("equals").addEventListener("click", equalsFunction);
-        document.getElementById("four").addEventListener("click", fourFunction);
-
-        function fourFunction() {
-            document.getElementById("screen").textContent += "4";
-        }
-        document.getElementById("five").addEventListener("click", fiveFunction);
-
-        function fiveFunction() {
-            document.getElementById("screen").textContent += "5";
-        }
-        document.getElementById("six").addEventListener("click", sixFunction);
-
-        function sixFunction() {
-            document.getElementById("screen").textContent += "6";
-        }
-        document.getElementById("seven").addEventListener("click", sevenFunction);
-
-        function sevenFunction() {
-            document.getElementById("screen").textContent += "7";
-        }
-        document.getElementById("eight").addEventListener("click", eightFunction);
-
-        function eightFunction() {
-            document.getElementById("screen").textContent += "8";
-        }
-        document.getElementById("nine").addEventListener("click", nineFunction);
-
-        function nineFunction() {
-            document.getElementById("screen").textContent += "9";
-        }
-
-        function equalsFunction() {
-            let secondValue = document.getElementById("screen").textContent;
-            if (b === 1) {
-                console.log(firstValue);
-                console.log(parseInt(firstValue));
-                console.log(secondValue)
-                document.getElementById("screen").textContent = parseFloat(firstValue) - parseFloat(secondValue);
-                b = 0;
-            } else if (b === 2) {
-                console.log(firstValue);
-                console.log(parseInt(firstValue));
-                console.log(secondValue)
-
-                document.getElementById("screen").textContent = parseFloat(firstValue) * parseFloat(secondValue);
-                b = 0;
-            } else if (b === -2) {
-                console.log(firstValue);
-                console.log(parseInt(firstValue));
-                console.log(secondValue)
-
-                document.getElementById("screen").textContent = parseFloat(firstValue) / parseFloat(secondValue);
-                b = 0;
-            } else if (b === -1) {
-                console.log(firstValue);
-                console.log(parseInt(firstValue));
-                console.log(secondValue)
-
-                document.getElementById("screen").textContent = parseFloat(firstValue) + parseFloat(secondValue);
-                b = 0;
-            }
-
-        }
-    </script>
+    </footer>
+    <section id="reg" class="reg">
+        <div class="top">
+            <div class="container-2 top">
+                <h2 class="reg-text">Sign Up</h2>
+                <button class="cross" id="reg2">❌</button>
+            </div>
+        </div>
+        <div class="container-2">
+            <section class="reg-section-form">
+                <h3 class="form-text">Register with us to get offers, support and more</h3>
+                <form class="reg-form">
+                    <label for="name" class="reg-item-name">Name</label>
+                    <input type="text" name="name" placeholder="Enter Name" class="reg-input-area">
+                    <label for="email" class="reg-item-name">Email</label>
+                    <input type="email" name="email" placeholder="Enter Email" class="reg-input-area">
+                    <label for="password" class="reg-item-name">Password</label>
+                    <input type="password" name="password" placeholder="Enter Password" class="reg-input-area">
+                    <label for="password" class="reg-item-name">Comfirm Password</label>
+                    <input type="password" name="password" placeholder="Confirm Password" class="reg-input-area">
+                    <input class="submit-reg" type="submit" value="Submit">
+                </form>
+            </section>
+        </div>
+    </section>
     <script src="./script.js"></script>
 </body>
 

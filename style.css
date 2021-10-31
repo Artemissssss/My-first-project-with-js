@@ -20,6 +20,10 @@ a {
     color: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     transition: transform 0.3s ease;
     font-family: 'Roboto', sans-serif;
@@ -28,9 +32,7 @@ body {
 body.show-nav {
     transform: translateX(200px);
 }
-button {
-    cursor: pointer;
-}
+
 /* .show-nav2{
     width: 100vh-200px;
 } */
@@ -38,6 +40,7 @@ button {
     width: 80%;
     margin: 0 auto;
 }
+
 .container-2 {
     width: 95%;
     margin: 0 auto;
@@ -118,6 +121,10 @@ header {
     font-size: 21px;
 }
 
+.toogle:hover {
+    cursor: pointer;
+}
+
 h1 {
     font-weight: 500;
     margin-bottom: 25px;
@@ -135,7 +142,7 @@ h1 {
     color: white;
     border-radius: 7px;
     border: none;
-    padding: 10px 35px;
+    padding: 7px 25px;
     margin-bottom: 25px;
     font-size: 35px;
 }
@@ -166,11 +173,12 @@ h1 {
 .more-text {
     margin-bottom: 15px;
 }
+
+/*! =================REG============================ */
 .back{
     background-color: rgba(0, 0, 0, 0.466);
     z-index: 1000;
 }
-/* =========================================FOrm=======================================*/
 .reg {
     display: none;
     background-color: white;
@@ -188,7 +196,7 @@ h1 {
     animation-duration: 0.5s;
     z-index: 1001;
 }
-
+ /* Chrome, Safari, Opera */
  @-webkit-keyframes example {
     0% {opacity: 0;}
     25% {opacity: 0.3;}
@@ -197,7 +205,7 @@ h1 {
     100% {opacity:1;}
    }
     
-
+   /* Standard syntax */
    @keyframes example {
     0% {opacity: 0;}
     25% {opacity: 0.3;}
@@ -278,5 +286,4 @@ h1 {
     color: white;
     font-family: "Roboto", sans-serif;
     font-size: 20px;
-    cursor: pointer;
 }

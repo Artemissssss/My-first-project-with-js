@@ -21,7 +21,84 @@ function onClickSlide() {
         i--;
     }
 }
-function formReg() {
-document.querySelector("#reg").classList.toggle("sec-reg-st");
-document.querySelector('body').classList.toggle("back");
+// //!Урок ============= не для чего===========
+// function min(a,b,c){
+// if(a<b && a <c){
+//     return a;
+// }
+// else if(b<a && b<c){
+//     return b;
+// }else{
+//     return c;
+// }
+// }
+// alert(min(10,-1,6));
+//Todo================
+// let array = [];
+// for (let i = 0; i <= 7; i++) {
+//     array.unshift('#');
+//     console.log(array.join(''));
+// }
+//Todo================
+//шахматная доска из # 8x8
+//# #
+// # 
+// let array = [];
+// let a = 0;
+// for (let i = 0; i < 8; i++) {
+//     if (a == 0) {
+//         if (array.length < 7) {
+//             for (let m = 0; m < 4; m++) {
+//                 array.unshift(' ')
+//                 array.unshift('#')
+//             }
+//         }
+//         a++;
+//     } else if (a == 1) {
+//         if (array.length < 7) {
+//             for (let m = 0; m < 4; m++) {
+//                 array.unshift('#')
+//                 array.unshift(' ')
+//             }
+//         }
+//         a--;
+//     }
+//     console.log(array.splice('').join(''))
+
+// }
+//todo=====================================
+//Вести суму зарплати 
+//Премію додати 15%
+//Віднімаємо 10% податків
+//190 -
+//залишок ділимо на 2
+// function moneyCalculatorForMonth (a){
+//     let i =((a/100*115)/100*90-190)/2;
+//     return i ;  
+// }
+// let mon = prompt(`You salary?`,``);
+// alert(`${moneyCalculatorForMonth(mon)}grn left.`)
+
+//todo=====================================
+// function sum(a,b,c){
+// if(a+b+c <0){
+// return "-";
+// }else{
+// return "+";
+// }
+// }
+// alert(sum(-10,5,-2))
+//todo=====================================
+
+//!========================================
+//?========================================
+document.querySelector("#reg1").addEventListener("click", onAllClick)
+document.querySelector("#reg2").addEventListener("click", onAllClick)
+// function formReg() {
+// document.querySelector("#reg").classList.toggle("sec-reg-st");
+// document.querySelector('body').classList.toggle("back");
+// }
+function onAllClick(){
+    document.querySelector("#reg").classList.toggle("sec-reg-st");
+    document.querySelector('body').classList.toggle("back");
 }
