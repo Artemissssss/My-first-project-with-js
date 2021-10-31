@@ -166,28 +166,36 @@
         let firstValue;
 
         function plusFunction() {
-            firstValue = document.getElementById("screen").textContent;
+            if(document.getElementById("screen").textContent !== ''){
+               firstValue = document.getElementById("screen").textContent;
+           }
             document.getElementById("screen").textContent = "";
             b = -1;
         }
         document.getElementById("minus").addEventListener("click", minusFunction);
 
         function minusFunction() {
-            firstValue = document.getElementById("screen").textContent;
+            if(document.getElementById("screen").textContent !== ''){
+               firstValue = document.getElementById("screen").textContent;
+           }
             document.getElementById("screen").textContent = "";
             b = 1;
         }
         document.getElementById("multiplication").addEventListener("click", multiplicationFunction);
 
         function multiplicationFunction() {
-            firstValue = document.getElementById("screen").textContent;
+            if(document.getElementById("screen").textContent !== ''){
+               firstValue = document.getElementById("screen").textContent;
+           }
             document.getElementById("screen").textContent = "";
             b = 2;
         }
         document.getElementById("division").addEventListener("click", divisionFunction);
 
         function divisionFunction() {
-            firstValue = document.getElementById("screen").textContent;
+            if(document.getElementById("screen").textContent !== ''){
+               firstValue = document.getElementById("screen").textContent;
+           }
             document.getElementById("screen").textContent = "";
             b = -2;
         }
