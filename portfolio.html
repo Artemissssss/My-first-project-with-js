@@ -17,7 +17,7 @@
     </head>
 
 <body>
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -26,13 +26,28 @@
 
         .calculator {
             width: 400px;
-            height: 900px;
+            height: 1000px;
             border: 2px solid rgb(255, 82, 82);
             margin: 50px auto;
             border-radius: 7px;
         }
 
-        #screen {
+        .question {
+            display: none;
+            height: 640px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(158, 120, 120);
+            color: white;
+            z-index: 100;
+        }
+.see-question{
+    display: block;
+}
+        #screen,
+        #powerNumberScreen {
             border-bottom: 2px solid rgb(255, 82, 82);
             height: 100px;
             color: rgb(180, 39, 39);
@@ -135,6 +150,24 @@
         <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, amet!</p>
         <button class="cta-btn" id="reg1" >Sign Up</button>
     </header>
+   <div class="calculator question">
+        <div id="powerNumberScreen"></div>
+        <div class="numbers">
+            <button class="btn-number" id="zeroPower">0</button>
+            <button class="btn-number" id="onePower">1</button>
+            <button class="btn-number" id="twoPower">2</button>
+            <button class="btn-number" id="threePower">3</button>
+            <button class="btn-number" id="fourPower">4</button>
+            <button class="btn-number" id="fivePower">5</button>
+            <button class="btn-number" id="sixPower">6</button>
+            <button class="btn-number" id="sevenPower">7</button>
+            <button class="btn-number" id="eightPower">8</button>
+            <button class="btn-number" id="ninePower">9</button>
+            <button class="btn-operations" id="minusThanZeroPower">(-)</button>
+            <button class="btn-number" id="ok">ok</button>
+            <button class="btn-operations" id="reversePower">&#8592;</button>
+        </div>
+    </div>
     <div class="calculator">
         <div id="screen"></div>
         <div class="numbers">
@@ -158,7 +191,8 @@
             <button class="btn-operations" id="factorial">!</button>
             <button class="btn-operations" id="equals">=</button>
             <button class="btn-operations" id="reverse">&#8592;</button>
-            <button class="btn-operations" id="power">x²</button>
+            <button class="btn-operations" id="power">^</button>
+            <button class="btn-operations" id="minusThanZero">(-)</button>
         </div>
     </div>
     <script>
@@ -166,43 +200,43 @@
         let firstValue;
 
         function plusFunction() {
-            if(document.getElementById("screen").textContent !== ''){
-               firstValue = document.getElementById("screen").textContent;
-           }
+            if (document.getElementById("screen").textContent !== '') {
+                firstValue = document.getElementById("screen").textContent;
+            }
             document.getElementById("screen").textContent = "";
             b = -1;
         }
         document.getElementById("minus").addEventListener("click", minusFunction);
 
         function minusFunction() {
-            if(document.getElementById("screen").textContent !== ''){
-               firstValue = document.getElementById("screen").textContent;
-           }
+            if (document.getElementById("screen").textContent !== '') {
+                firstValue = document.getElementById("screen").textContent;
+            }
             document.getElementById("screen").textContent = "";
             b = 1;
         }
         document.getElementById("multiplication").addEventListener("click", multiplicationFunction);
 
         function multiplicationFunction() {
-            if(document.getElementById("screen").textContent !== ''){
-               firstValue = document.getElementById("screen").textContent;
-           }
+            if (document.getElementById("screen").textContent !== '') {
+                firstValue = document.getElementById("screen").textContent;
+            }
             document.getElementById("screen").textContent = "";
             b = 2;
         }
         document.getElementById("division").addEventListener("click", divisionFunction);
 
         function divisionFunction() {
-            if(document.getElementById("screen").textContent !== ''){
-               firstValue = document.getElementById("screen").textContent;
-           }
+            if (document.getElementById("screen").textContent !== '') {
+                firstValue = document.getElementById("screen").textContent;
+            }
             document.getElementById("screen").textContent = "";
             b = -2;
         }
         document.getElementById("reverse").addEventListener("click", reverseFunction);
 
         function reverseFunction() {
-            window.location.reload();
+            document.getElementById("screen").textContent = (document.getElementById("screen").textContent).substring(0, (document.getElementById("screen").textContent).length - 1);
         }
         document.getElementById("zero").addEventListener("click", zeroFunction);
         document.getElementById("fraction").addEventListener("click", fractionFunction);
@@ -211,12 +245,12 @@
             let v = document.getElementById("screen").textContent;
             v = v.split('');
             v.reverse()
-            if (v[0] !== '.') {
+            if (v[0] !== '.' &&  document.getElementById("screen").textContent !== '') {
                 document.getElementById("screen").textContent += '.';
             }
         }
         document.getElementById("factorial").addEventListener("click", factorialFunction);
-
+        
         function factorialFunction() {
             let q = parseInt(document.getElementById("screen").textContent),
                 col = 1;
@@ -225,12 +259,52 @@
             }
             document.getElementById("screen").textContent = `${col}`;
         }
-        document.getElementById("power").addEventListener("click", powerFunction);
-
-        function powerFunction() {
-            document.getElementById("screen").textContent = parseFloat(document.getElementById("screen").textContent) *
-                parseFloat(document.getElementById("screen").textContent);
+        document.getElementById("minusThanZero").addEventListener("click", minusThanZeroFunction);
+        function  minusThanZeroFunction(){
+           if(document.getElementById("screen").textContent == ''){
+            document.getElementById("screen").textContent += '-'
+           } 
         }
+        document.getElementById("power").addEventListener("click", powerFunction);
+let powerNumber;
+let dr = 0;
+document.getElementById("ok").addEventListener("click", powerFunction)
+function powerFunction() {
+let powerNumberToAll = parseFloat(document.getElementById("screen").textContent);
+console.log(powerNumberToAll)
+if(document.getElementById("screen").textContent !== ''){
+if(dr == 0){
+    document.getElementsByClassName("question")[0].style.display = "block";
+    dr++;
+}else{
+    document.getElementsByClassName("question")[0].style.display = "none";
+dr--;
+}
+powerNumber = parseFloat(document.getElementById("powerNumberScreen").textContent);
+if( document.getElementById("powerNumberScreen").textContent !== ''){
+    let powerUp = powerNumberToAll;
+if(powerNumber > 0){
+for(let r = 1; r < powerNumber; r++){
+powerUp *= powerNumberToAll;
+console.log(powerNumberToAll)
+}
+console.log(powerUp)
+document.getElementById("screen").textContent = powerUp;
+}
+else if(powerNumber == 0){
+    document.getElementById("screen").textContent = 1;
+}
+else{
+for(let gh = 1; gh<(powerNumber/(-1)); gh++){
+    powerUp *= powerNumberToAll;
+}
+document.getElementById("screen").textContent = 1/powerUp;
+}
+document.getElementById("powerNumberScreen").textContent = '';
+}
+}
+}
+
 
         function zeroFunction() {
             document.getElementById("screen").textContent += "0";
@@ -315,6 +389,66 @@
                 b = 0;
             }
 
+        }
+        document.getElementById("zeroPower").addEventListener("click", zeroFunctionPower);
+        function zeroFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "0";
+        }
+        document.getElementById("onePower").addEventListener("click", oneFunctionPower);
+
+        function oneFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "1";
+        }
+        document.getElementById("twoPower").addEventListener("click", twoFunctionPower);
+
+        function twoFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "2";
+        }
+        document.getElementById("threePower").addEventListener("click", threeFunctionPower);
+
+        function threeFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "3";
+        }
+        document.getElementById("fourPower").addEventListener("click", fourFunctionPower);
+
+        function fourFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "4";
+        }
+        document.getElementById("fivePower").addEventListener("click", fiveFunctionPower);
+
+        function fiveFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "5";
+        }
+        document.getElementById("sixPower").addEventListener("click", sixFunctionPower);
+
+        function sixFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "6";
+        }
+        document.getElementById("sevenPower").addEventListener("click", sevenFunctionPower);
+
+        function sevenFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "7";
+        }
+        document.getElementById("eightPower").addEventListener("click", eightFunctionPower);
+
+        function eightFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "8";
+        }
+        document.getElementById("ninePower").addEventListener("click", nineFunctionPower);
+
+        function nineFunctionPower() {
+            document.getElementById("powerNumberScreen").textContent += "9";
+        }
+        document.getElementById("reversePower").addEventListener("click", reverseFunctionPower);
+
+function reverseFunctionPower() {
+    document.getElementById("powerNumberScreen").textContent = (document.getElementById("powerNumberScreen").textContent).substring(0, (document.getElementById("powerNumberScreen").textContent).length - 1);
+}
+document.getElementById("minusThanZeroPower").addEventListener("click", minusThanZeroFunctionPower);
+        function  minusThanZeroFunctionPower(){
+           if(document.getElementById("powerNumberScreen").textContent == ''){
+            document.getElementById("powerNumberScreen").textContent += '-'
+           } 
         }
     </script>
     <section id="reg" class="reg">
