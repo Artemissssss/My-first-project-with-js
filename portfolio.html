@@ -252,12 +252,15 @@
         document.getElementById("factorial").addEventListener("click", factorialFunction);
         
         function factorialFunction() {
+            
             let q = parseInt(document.getElementById("screen").textContent),
                 col = 1;
+            if(document.getElementById("screen").textContent !== ''){
             for (let i = 1; i <= q; i++) {
                 col *= i;
             }
             document.getElementById("screen").textContent = `${col}`;
+            }
         }
         document.getElementById("minusThanZero").addEventListener("click", minusThanZeroFunction);
         function  minusThanZeroFunction(){
