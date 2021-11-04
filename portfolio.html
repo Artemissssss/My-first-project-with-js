@@ -247,7 +247,7 @@ color: white;
             let v = document.getElementById("screen").textContent;
             v = v.split('');
             v.reverse()
-            if (v[0] !== '.' &&  document.getElementById("screen").textContent !== '') {
+            if (v.includes('.') == false && document.getElementById("screen").textContent !== '') {
                 document.getElementById("screen").textContent += '.';
             }
         }
