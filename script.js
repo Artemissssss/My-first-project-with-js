@@ -102,3 +102,21 @@ function onAllClick(){
     document.querySelector("#reg").classList.toggle("sec-reg-st");
     document.querySelector('body').classList.toggle("back");
 }
+    let i = 0;
+    let txt = "_Hello it is future!"
+    let txtArray = txt.split("");
+    let speed = 500;
+     setInterval(function typing(){
+      
+         if(i < txtArray.length){
+         document.getElementById("name").textContent += txt[i]
+         i++
+      }else{
+         if(i < txtArray.length*2){
+           document.getElementById("name").textContent =document.getElementById("text2").textContent.substring(0, document.getElementById("text2").textContent.length - 1);
+       i++;
+         }else{
+           i = 0;
+         }
+       }
+     },100)
